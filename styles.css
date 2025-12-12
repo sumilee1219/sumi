@@ -1,0 +1,293 @@
+/* Import font for consistency with the original code */
+@import url('https://fonts.cdnfonts.com/css/suisse-intl');
+
+/* General Styling */
+body {
+    font-family: 'Suisse Intl', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black; /* bg-black */
+}
+
+.quiz-container {
+    padding: 2rem; /* p-8 */
+    max-width: 48rem; /* max-w-2xl or max-w-4xl for results */
+    width: 100%;
+    background-color: white; /* bg-white */
+    border: 1px solid #d1d5db; /* border border-gray-300 */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-sizing: border-box;
+}
+
+/* Question/Progress Styling */
+.progress-bar-container {
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.progress-text-main {
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 600; /* font-semibold */
+    color: #4b5563; /* text-gray-600 */
+}
+
+.progress-text-sub {
+    font-size: 0.75rem; /* text-xs */
+    color: #6b7280; /* text-gray-500 */
+}
+
+.progress-track {
+    width: 100%;
+    background-color: #e5e7eb; /* bg-gray-200 */
+    height: 0.25rem; /* h-1 */
+    border-radius: 0.25rem; /* rounded */
+}
+
+.progress-fill {
+    background-color: #111827; /* bg-gray-900 */
+    height: 100%;
+    border-radius: 0.25rem;
+    transition: width 0.3s ease-in-out; /* transition-all duration-300 */
+}
+
+.question-text {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 500; /* font-medium */
+    color: #111827; /* text-gray-900 */
+    margin-bottom: 2rem; /* mb-8 */
+    line-height: 1.625; /* leading-relaxed */
+}
+
+/* Answer Button Grid */
+.answer-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* grid-cols-5 */
+    gap: 0.75rem; /* gap-3 */
+}
+
+.answer-button {
+    background-color: white;
+    color: #111827; /* text-gray-900 */
+    font-weight: 600; /* font-semibold */
+    padding: 1.5rem 1rem; /* py-6 px-4 */
+    border-radius: 0.25rem; /* rounded */
+    transition: all 0.15s ease-out; /* transition-all */
+    border: 2px solid #111827; /* border-2 border-gray-900 */
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.answer-button:hover {
+    background-color: #111827; /* hover:bg-gray-900 */
+    color: white; /* hover:text-white */
+    transform: scale(1.05); /* hover:scale-105 */
+}
+
+.answer-scale-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem; /* mt-4 */
+    font-size: 0.75rem; /* text-xs */
+    color: #6b7280; /* text-gray-500 */
+    padding: 0 0.25rem; /* px-1 */
+}
+
+/* Results Section Styling */
+.results-header {
+    text-align: center;
+    margin-bottom: 3rem; /* mb-12 */
+}
+
+.results-header p {
+    color: #4b5563; /* text-gray-600 */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.results-header h1 {
+    font-size: 3rem; /* text-5xl */
+    font-weight: bold;
+    color: #111827; /* text-gray-900 */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Category Analysis */
+.category-analysis {
+    margin-bottom: 2.5rem; /* mb-10 */
+}
+
+.category-analysis h2 {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: bold;
+    color: #111827; /* text-gray-900 */
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.category-item {
+    margin-bottom: 1.5rem; /* space-y-6 equivalent */
+}
+
+.category-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem; /* space-y-2 equivalent */
+}
+
+.category-name {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* gap-3 */
+}
+
+.category-name span:first-child {
+    font-weight: bold;
+    color: #111827; /* text-gray-900 */
+    font-size: 1.125rem; /* text-lg */
+}
+
+.category-name span:last-child {
+    font-size: 0.875rem; /* text-sm */
+    color: #6b7280; /* text-gray-500 */
+}
+
+.category-score {
+    text-align: right;
+}
+
+.category-score span:first-child {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: bold;
+    color: #111827; /* text-gray-900 */
+}
+
+.category-score span:last-child {
+    font-size: 0.875rem; /* text-sm */
+    color: #6b7280; /* text-gray-500 */
+    margin-left: 0.5rem; /* ml-2 */
+}
+
+.category-progress-track {
+    width: 100%;
+    background-color: #e5e7eb; /* bg-gray-200 */
+    height: 2rem; /* h-8 */
+    border-radius: 9999px; /* rounded-full */
+    overflow: hidden;
+}
+
+.category-progress-fill {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 1s ease-out; /* transition-all duration-1000 ease-out */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0.75rem; /* pr-3 */
+}
+
+.category-progress-fill span {
+    color: white;
+    font-weight: 600; /* font-semibold */
+    font-size: 0.875rem; /* text-sm */
+}
+
+/* Detailed Responses */
+.detailed-responses {
+    margin-bottom: 2rem; /* mb-8 */
+}
+
+.detailed-responses h2 {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: bold;
+    color: #111827; /* text-gray-900 */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+.response-list {
+    max-height: 24rem; /* max-h-96 */
+    overflow-y: auto;
+    padding-right: 0.5rem; /* For scrollbar space */
+}
+
+.response-item {
+    background-color: #f9fafb; /* bg-gray-50 */
+    border: 1px solid #e5e7eb; /* border border-gray-200 */
+    border-radius: 0.25rem; /* rounded */
+    padding: 1rem; /* p-4 */
+    margin-bottom: 0.75rem; /* space-y-3 equivalent */
+}
+
+.response-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.response-question {
+    font-weight: 500;
+    color: #111827; /* text-gray-900 */
+    font-size: 0.875rem; /* text-sm */
+    flex: 1;
+    margin-right: 0.75rem; /* ml-3 */
+}
+
+.response-tag {
+    color: #6b7280; /* text-gray-500 */
+    margin-right: 0.25rem;
+}
+
+.response-category-tag {
+    padding: 0.25rem 0.75rem; /* px-3 py-1 */
+    border-radius: 9999px; /* rounded-full */
+    font-size: 0.75rem; /* text-xs */
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+}
+
+.response-answer {
+    color: #4b5563; /* text-gray-600 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+.response-score {
+    font-weight: bold;
+    color: #111827; /* text-gray-900 */
+}
+
+/* Restart Button */
+.restart-button {
+    width: 100%;
+    background-color: #111827; /* bg-gray-900 */
+    color: white;
+    font-weight: 600; /* font-semibold */
+    padding: 0.75rem 1.5rem; /* py-3 px-6 */
+    border-radius: 0.25rem; /* rounded */
+    transition: all 0.15s ease-out;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.restart-button:hover {
+    background-color: #1f2937; /* hover:bg-gray-800 */
+}
+
+/* Category Colors (for results visualization) */
+.Convenience { background-color: #3b82f6; /* bg-blue-500 */ }
+.Cost { background-color: #10b981; /* bg-green-500 */ }
+.Safety { background-color: #f59e0b; /* bg-yellow-500 */ }
+.Emotion { background-color: #a855f7; /* bg-purple-500 */ }
+.Time { background-color: #ef4444; /* bg-red-500 */ }
+.Sustainability { background-color: #14b8a6; /* bg-teal-500 */ }
+.Community { background-color: #ec4899; /* bg-pink-500 */ }
